@@ -36,16 +36,41 @@ a:hover {
     text-decoration: underline;
 }
 
+/* CTA Button Styling */
+.cta-button {
+    display: inline-block;
+    background-color: #FFC000; /* A bright, contrasting gold/yellow for strong CTA */
+    color: var(--primary-color) !important; /* XIME Red text on the yellow button */
+    padding: 15px 30px;
+    margin: 30px 0; /* Add margin for spacing */
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #FFD700; /* Slightly lighter yellow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+/* Specific styling for the footer CTA to ensure it stands out against the dark background */
+.footer-cta {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 /* Header/Hero Section */
 .hero {
     background-color: var(--primary-color);
     color: var(--light-text-color);
     padding: 60px 20px;
     text-align: center;
-    /* Optional: Add a background image here if available, matching the brochure's visual style */
-    /* background-image: url('hr-analytics-hero.jpg'); */
-    /* background-size: cover; */
-    /* background-position: center; */
 }
 
 .hero h1 {
@@ -99,7 +124,7 @@ a:hover {
 }
 
 .section ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding-left: 0;
 }
 
