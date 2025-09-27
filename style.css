@@ -73,9 +73,39 @@ a:hover {
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
+.logo-box {
+    background-color: var(--light-text-color); /* White background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 3D effect */
+    padding: 25px 30px 15px; /* Reduced bottom padding to tighten the box */
+    display: inline-block; /* Keeps it from stretching full-width */
+    margin-bottom: 20px; /* Adds space below the box */
+}
+
+/* Override text color for elements inside the new white box */
+.logo-box .tagline {
+    color: var(--text-color); /* Changed to black/dark grey */
+}
+
+.logo-box h1 {
+    color: var(--primary-color);
+    font-size: 5.5em; /* Increased font size for more impact */
+    letter-spacing: 0.2em; /* Adjusted letter spacing for the new size */
+    margin: 0 0 15px 0.2em; /* Adjusted margin to re-center */
+    line-height: 1;
+    font-weight: 900; /* Bolder font for a stronger effect */
+    /* Professional 3D text-shadow effect */
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff, /* White outline to lift the text */
+         3px 3px 0px rgba(0,0,0,0.15), /* Subtle dark shadow for depth */
+         5px 5px 8px rgba(0,0,0,0.2); /* Softer, larger shadow for 3D feel */
+}
+
+.logo-box .tagline {
+    margin-bottom: 0; /* Remove bottom margin from tagline inside the box */
 }
 
 .hero .tagline {
@@ -247,12 +277,6 @@ a:hover {
 
 
 /* Resource Personnel */
-.personnel-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
 .person {
     background-color: #fff;
     padding: 20px;
@@ -288,5 +312,48 @@ a:hover {
 @media (min-width: 768px) {
     .schedule {
         grid-template-columns: 1fr 1fr;
+    }
+
+    /* On desktop, use the grid layout for personnel */
+    .personnel-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    /* Hide dots on desktop */
+    .carousel-dots {
+        display: none;
+    }
+}
+
+/* Mobile-first Carousel for Resource Personnel */
+@media (max-width: 767px) {
+    .personnel-list {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; /* Enable snapping */
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding-bottom: 15px; /* Space for scrollbar without hiding content */
+        /* Hide scrollbar for a cleaner look */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .personnel-list::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
+
+    .person {
+        flex: 0 0 90%; /* Each card takes 90% of the container width */
+        scroll-snap-align: center; /* Snap to the center of the card */
+    }
+
+    /* Dots are not implemented in this pure-CSS version but the container is ready */
+    /* To implement dots, you would need a small amount of JavaScript to track the scroll position */
+    .carousel-dots {
+        text-align: center;
+        margin-top: 15px;
     }
 }
