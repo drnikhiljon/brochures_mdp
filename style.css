@@ -1,0 +1,234 @@
+/* Custom CSS Variables for easy theming */
+:root {
+    --primary-color: #A50021; /* Dark Red, inspired by the brochure's color */
+    --secondary-color: #F8F8F8;
+    --text-color: #333;
+    --light-text-color: #FFF;
+    --font-family: 'Arial', sans-serif;
+    --max-width: 1100px;
+}
+
+/* Base Styles & Accessibility */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header/Hero Section */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 60px 20px;
+    text-align: center;
+    /* Optional: Add a background image here if available, matching the brochure's visual style */
+    /* background-image: url('hr-analytics-hero.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.hero .tagline {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.hero h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.programme-title {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.event-details p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.event-details a {
+    color: var(--light-text-color);
+    font-weight: bold;
+}
+
+/* General Section Styling */
+.section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.section ul {
+    list-style: none; /* Remove default list style */
+    padding-left: 0;
+}
+
+.section li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.section li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Audience Grid */
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.audience-grid > div {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Schedule */
+.schedule {
+    display: grid;
+    gap: 30px;
+}
+
+.day-card {
+    background-color: #fff;
+    padding: 20px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.day-card h4 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.schedule-entry {
+    border-top: 1px dashed #eee;
+    padding: 15px 0;
+}
+
+.schedule-entry:first-of-type {
+    border-top: none;
+}
+
+.time {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.topic {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.subtopics {
+    margin-left: 15px;
+    font-size: 0.9em;
+}
+
+.subtopics li::before {
+    content: '—'; /* Use a different marker for sub-list */
+}
+.subtopics .tools {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+/* Resource Personnel */
+.personnel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.person {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.person h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.person .title {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .schedule {
+        grid-template-columns: 1fr 1fr;
+    }
+}
